@@ -1,0 +1,28 @@
+"""getzipcodes.util.log"""
+import logging
+
+loggers = {}
+
+def get_configured_logger(name, level):
+
+    if loggers.get(name):
+        return loggers.get(name)
+
+    else:
+        logger = logging.getLogger(name)
+        logger.setLevel(getattr(logging, level))
+
+        if not logger.handlers:
+            ch = logging.StreamHandler()
+            ch.setLevel(getattr(logging, level))
+
+            format_string = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            formatter = logging.Formatter(format_string)
+
+            ch.setFormatter(formatter)
+
+            logger.addHandler(ch)
+
+        loggers.update(dict(name=logger))
+
+        return logger
