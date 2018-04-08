@@ -21,7 +21,7 @@ setup(
     packages=find_packages(exclude=["tests"]),
     entry_points={
         "console_scripts": [
-            "getzipcodes=getzipcodes.__main__:main"
+            "getzipcodes=getzipcodes.getzipcodes:main"
         ]
     }
 )
