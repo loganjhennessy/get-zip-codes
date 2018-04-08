@@ -26,7 +26,7 @@ class ZipCodeRequest(object):
             'https://www.zipcodeapi.com/rest/{}/city-zips.json/{}/{}'
         )
         self.city = city
-        self.logger = get_configured_logger(__name__, "INFO")
+        self.logger = get_configured_logger(__name__, "WARN")
         self.state = state
 
         self.logger.info('ZipCodeRequest initialized for {}, {}.'.format(
