@@ -5,14 +5,22 @@ import argparse
 
 def get_arguments():
     parser = argparse.ArgumentParser(
-        prog="getzipcodes", description="Get Zip Codes utility script.")
-
+        prog="getzipcodes",
+        description="Get Zip Codes utility script. By default, the script "
+                    "will output JSON-formatted zip codes for the specified "
+                    "city. Note that you must set a ZIP_KEY environment"
+                    "variable to your zipcodeapi.com key.")
     parser.add_argument(
         dest="city", help="City in which to search for zip codes.")
     parser.add_argument(
-        dest="state", help="State in which to search for zip codes.")
+        dest="state",
+        help="Two-character state in which to search for zip codes.")
     parser.add_argument(
-        "-f", "--file", default=False, help="path to file to output zip codes")
+        "-f",
+        "--file",
+        metavar="<file.json>",
+        default=False,
+        help="path to file to output zip codes in JSON")
     parser.add_argument(
         "-d", "--datastore", action="store_true", help="output to datastore")
 
