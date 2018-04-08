@@ -2,7 +2,6 @@ from getzipcodes.zipcoderequest import ZipCodeRequest
 
 import argparse
 import json
-import pprint
 
 
 def get_arguments():
