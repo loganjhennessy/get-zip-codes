@@ -18,4 +18,10 @@ setup(
     author="Logan Hennessy",
     author_email="loganjhennessy@gmail.com",
     license="MIT",
-    packages=find_packages(exclude=["tests"]))
+    packages=find_packages(exclude=["tests"]),
+    entry_points={
+        "console_scripts": [
+            "getzipcodes=getzipcodes.__main__:main"
+        ]
+    }
+)
