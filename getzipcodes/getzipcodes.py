@@ -60,7 +60,6 @@ def write_results(city, state, zipcodes, file, ds):
         logger.info("Output uploaded to {} kind with key {}.".format(kind, key))
 
 
-
 def main():
     city, state, file, ds = get_arguments()
     zcr = ZipCodeRequest(city, state)
