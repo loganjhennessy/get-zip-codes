@@ -2,10 +2,8 @@
 
 Simple command-line utility that wraps the 
 [zipcodeapi](https://www.zipcodeapi.com) to get a list of zip codes for a given
-city, state combination. The result can be stored as a `.json` file or writen
-to Google Cloud Datastore.
-
-All output is written to stdout.
+city, state combination. The result can be stored as a `.json` file and/or
+writen to Google Cloud Datastore. Either way, all output is written to stdout.
 
 ## Installation
 
@@ -17,17 +15,31 @@ pip install -e .
 
 ## Usage
 
-Example of outputting to file:
+You must first [register your app](http://www.zipcodeapi.com/Register) with
+[zipcodeapi](https://www.zipcodeapi.com) and obtain a key. The `getzipcodes`
+utility looks for the key in the `ZIP_KEY` environment variable, so make sure
+you set it accordingly. For example:
+
+```bash
+export ZIP_KEY=<your-key>
+```
+
+Example of outputting to a file:
 
 ```bash
 getzipcodes reno nv -f renozips.json
 ```
 
-Example of outputting to Datastore:
+Example of saving to Datastore:
 
 ```bash
 getzipcodes reno nv -d
 ```
+
+Note: You must have the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
+set to the location of your Google Cloud Platform credentials file. Depending
+on your current GCP plan, saving to Datastore may incur a charge. Please be
+cognizant and *know what you are doing* before doing so.
 
 ## Example Output
 
