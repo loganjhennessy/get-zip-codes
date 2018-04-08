@@ -1,9 +1,10 @@
 # Get Zip Codes
 
-Simple command-line utility that wraps the 
-[zipcodeapi](https://www.zipcodeapi.com) to get a list of zip codes for a given
-city, state combination. The result can be stored as a `.json` file and/or
-writen to Google Cloud Datastore. Either way, all output is written to stdout.
+Simple command-line utility that wraps 
+[zipcodeapi's](https://www.zipcodeapi.com) Location to Zip Codes endpoint to
+get a list of zip codes for a given city, state combination. The result can be
+stored as a `.json` file and/or writen to Google Cloud Datastore. Either way, 
+all output is written to stdout.
 
 ## Installation
 
