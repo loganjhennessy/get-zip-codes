@@ -1,5 +1,5 @@
 from os import path
-from setuptools import setup
+from setuptools import find_packages, setup
 
 
 here = path.abspath(path.dirname(__file__))
@@ -17,5 +17,5 @@ setup(
     url="https://github.com/loganjhennessy/get-zip-codes",
     author="Logan Hennessy",
     author_email="loganjhennessy@gmail.com",
-    license="MIT"
-)
+    license="MIT",
+    packages=find_packages(exclude=["tests"]))
