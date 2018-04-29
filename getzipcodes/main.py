@@ -37,7 +37,7 @@ def write_results(city, state, zipcodes, file, ds):
     output = {
         "city": city,
         "state": state,
-        "zipcodes": map(int, zipcodes)
+        "zipcodes": list(map(int, zipcodes))
     }
     print(json.dumps(output, indent=4))
 
